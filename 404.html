@@ -5,7 +5,7 @@
     <title>Redirecting...</title>
     <script>
       const { pathname, search, hash } = window.location
-      const redirect = `/?p=${encodeURIComponent(pathname)}&q=${encodeURIComponent(search.slice(1))}&h=${encodeURIComponent(hash)}`
+      const redirect = `${'%BASE_URL%'}?p=${encodeURIComponent(pathname)}&q=${encodeURIComponent(search.slice(1))}&h=${encodeURIComponent(hash)}`
 
       window.location.replace(redirect)
     </script>

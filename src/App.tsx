@@ -13,9 +13,13 @@ import NotFoundPage from './pages/NotFoundPage'
 import styles from './App.module.scss'
 
 function App() {
+  const basename = import.meta.env.BASE_URL === '/'
+    ? undefined
+    : import.meta.env.BASE_URL.replace(/\/$/, '')
+
   return (
     <HelmetProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <div className={styles.layout}>
           <header>
             <NavBar />
