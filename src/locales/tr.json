@@ -14,6 +14,13 @@
     "cta": "Projeleri Gör",
     "subtitle": "Mimar · Adana"
   },
+  "aiBanner": {
+    "title": "Yapay Zeka Destekli Pratik",
+    "message": "Bu web sitesi ve burada sunulan mimari projeler, yapay zeka destekli yöntemlerle geliştirilmektedir.",
+    "status": "WIP",
+    "ariaLabel": "Yapay zeka destekli çalışma bildirimi",
+    "dismiss": "Yapay zeka bildirimini kapat"
+  },
   "HomePage": {
     "tagline": "Mimarlık en saf haliyle.",
     "cta": "Çalışmaları Keşfet",

@@ -14,6 +14,13 @@
     "cta": "View Projects",
     "subtitle": "Architect · Adana"
   },
+  "aiBanner": {
+    "title": "AI-Assisted Practice",
+    "message": "This website and the architectural projects presented here are developed with AI-assisted methods.",
+    "status": "WIP",
+    "ariaLabel": "Notice about AI-assisted practice",
+    "dismiss": "Dismiss AI notice"
+  },
   "HomePage": {
     "tagline": "Architecture in its purest form.",
     "cta": "Explore Work",

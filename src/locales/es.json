@@ -14,6 +14,13 @@
     "cta": "Ver Proyectos",
     "subtitle": "Arquitecta · Adana"
   },
+  "aiBanner": {
+    "title": "Práctica Asistida por IA",
+    "message": "Este sitio web y los proyectos arquitectónicos presentados aquí se desarrollan mediante métodos asistidos por IA.",
+    "status": "WIP",
+    "ariaLabel": "Aviso sobre práctica asistida por IA",
+    "dismiss": "Cerrar aviso de IA"
+  },
   "HomePage": {
     "tagline": "Arquitectura en su forma más pura.",
     "cta": "Explorar Trabajo",

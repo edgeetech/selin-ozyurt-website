@@ -10,6 +10,16 @@
   font-family: v.$font-family-sans;
 }
 
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.main {
+  flex: 1;
+}
+
 // Legacy — kept for backwards-compat with existing tests
 .container {
   @include m.flex-center;

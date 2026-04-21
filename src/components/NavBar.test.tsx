@@ -71,6 +71,7 @@ describe('NavBar', () => {
     expect(trigger).toBeInTheDocument()
     expect(trigger).toHaveAttribute('aria-haspopup', 'listbox')
   })
+
 })
 
 describe('NavBar hamburger menu', () => {

@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
+import AIBanner from './components/AIBanner'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
@@ -21,20 +22,23 @@ function App() {
     <HelmetProvider>
       <BrowserRouter basename={basename}>
         <div className={styles.layout}>
-          <header>
+          <header className={styles.header}>
             <NavBar />
+            <AIBanner />
           </header>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/projects/:id" element={<ProjectDetailPage />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/blog/:slug" element={<BlogDetailPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            {/* Catch-all: renders for any unmatched route */}
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
+          <main className={styles.main}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/projects/:id" element={<ProjectDetailPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/blog/:slug" element={<BlogDetailPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              {/* Catch-all: renders for any unmatched route */}
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </main>
           <Footer />
         </div>
       </BrowserRouter>

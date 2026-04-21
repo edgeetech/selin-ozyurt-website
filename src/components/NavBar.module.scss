@@ -6,16 +6,16 @@
 
 // ── Root nav container ────────────────────────────────────────────────────────
 .nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
+  position: relative;
   background-color: v.$va-nav-bg;
   padding: 0 3rem;
 
   // Subtle bottom rule — only the faintest divider to keep it airy
   border-bottom: 1px solid v.$va-divider;
+
+  @media (max-width: 767px) {
+    padding: 0 1rem;
+  }
 }
 
 // ── Hamburger button — visible on mobile/tablet, hidden on desktop ────────────
