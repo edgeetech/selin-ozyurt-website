@@ -451,6 +451,19 @@ describe('LanguageSwitcher', () => {
     expect(localStorage.getItem('lang')).toBe('tr')
   })
 
+  it('shows EN as active when the current language resolves from en-US', async () => {
+    await i18n.changeLanguage('en-US')
+    render(<LanguageSwitcher />)
+
+    expect(screen.getByRole('button', { name: /select language/i })).toHaveTextContent('EN')
+
+    fireEvent.click(screen.getByRole('button', { name: /select language/i }))
+
+    const options = screen.getAllByRole('option')
+    const enOption = options.find((o) => o.textContent?.includes('🇬🇧'))
+    expect(enOption).toHaveAttribute('aria-selected', 'true')
+  })
+
   // ── Keyboard: Escape closes dropdown ─────────────────────────────────────
 
   it('pressing Escape closes the dropdown', async () => {

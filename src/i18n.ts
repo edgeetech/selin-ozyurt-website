@@ -14,9 +14,10 @@ i18n
       tr: { translation: tr },
       es: { translation: es },
     },
+    supportedLngs: ['tr', 'en', 'es'],
     fallbackLng: 'tr',
     detection: {
-      order: ['localStorage', 'navigator'],
+      order: ['localStorage'],
       lookupLocalStorage: 'lang',
       caches: ['localStorage'],
     },

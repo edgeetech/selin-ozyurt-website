@@ -22,8 +22,9 @@ function LanguageSwitcher({ dropUp = false }: LanguageSwitcherProps) {
   const { i18n, t } = useTranslation()
   const [open, setOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
+  const activeLanguageCode = (i18n.resolvedLanguage ?? i18n.language).split('-')[0]
 
-  const currentLang = LANGUAGES.find((l) => l.code === i18n.language) ?? LANGUAGES[0]
+  const currentLang = LANGUAGES.find((l) => l.code === activeLanguageCode) ?? LANGUAGES[0]
 
   function changeLanguage(code: string) {
     localStorage.setItem('lang', code)
@@ -76,8 +77,8 @@ function LanguageSwitcher({ dropUp = false }: LanguageSwitcherProps) {
             <li
               key={lang.code}
               role="option"
-              aria-selected={lang.code === i18n.language}
-              className={`${styles.option}${lang.code === i18n.language ? ` ${styles['option--active']}` : ''}`}
+              aria-selected={lang.code === activeLanguageCode}
+              className={`${styles.option}${lang.code === activeLanguageCode ? ` ${styles['option--active']}` : ''}`}
               onClick={() => changeLanguage(lang.code)}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -89,7 +90,7 @@ function LanguageSwitcher({ dropUp = false }: LanguageSwitcherProps) {
             >
               <span aria-hidden="true">{lang.flag}</span>
               <span>{t(`language.${lang.code}`)}</span>
-              {lang.code === i18n.language && (
+              {lang.code === activeLanguageCode && (
                 <span className={styles.check} aria-hidden="true">✓</span>
               )}
             </li>
