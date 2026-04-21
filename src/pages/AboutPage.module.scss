@@ -1,0 +1,116 @@
+@use '../styles/variables' as v;
+
+.page {
+  font-family: v.$font-family-sans;
+  color: v.$color-text;
+  background-color: v.$color-bg;
+  min-height: 100vh;
+}
+
+// ── Hero ─────────────────────────────────────────────────────────────────────
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0) 60%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  padding: 2.5rem 4rem;
+  color: v.$va-bg;
+}
+
+.heroTitle {
+  font-family: v.$font-family-serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin: 0 0 0.25rem;
+  letter-spacing: 0.02em;
+}
+
+.heroSubtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0.85;
+}
+
+// ── Biography ────────────────────────────────────────────────────────────────
+
+.bio {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 5rem 2rem 4rem;
+}
+
+.bioHeading {
+  font-family: v.$font-family-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 0 0 1.5rem;
+  letter-spacing: 0.03em;
+  border-bottom: 1px solid v.$va-divider;
+  padding-bottom: 0.75rem;
+}
+
+.bioParagraph {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 0 0 1.25rem;
+  color: v.$va-accent;
+}
+
+// ── Philosophy ───────────────────────────────────────────────────────────────
+
+.philosophy {
+  background-color: v.$vb-panel-bg;
+  padding: 4rem 2rem;
+}
+
+.philosophyInner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.philosophyHeading {
+  font-family: v.$font-family-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 0 0 1.25rem;
+  color: v.$vb-text;
+  letter-spacing: 0.03em;
+}
+
+.philosophyText {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: v.$vb-warm-grey;
+  font-style: italic;
+  margin: 0;
+}

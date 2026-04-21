@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selin Özyurt — Architect</title>
+    <script>
+      const redirect = new URLSearchParams(window.location.search)
+      const path = redirect.get('p')
+
+      if (path) {
+        const search = redirect.get('q') ?? ''
+        const hash = redirect.get('h') ?? ''
+        const target = `${path}${search ? `?${search}` : ''}${hash}`
+
+        window.history.replaceState(null, '', target)
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

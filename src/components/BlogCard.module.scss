@@ -1,0 +1,74 @@
+@use '../styles/variables' as v;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background-color: v.$vb-panel-bg;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: v.$shadow-card-hover;
+
+    .cardImage {
+      transform: scale(1.04);
+    }
+
+    .cardReadMore {
+      color: v.$vb-terracotta;
+    }
+  }
+}
+
+.cardImage {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.cardDate {
+  font-family: v.$font-family-sans;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: v.$vb-warm-grey;
+}
+
+.cardTitle {
+  font-family: v.$font-family-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: v.$vb-text;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.cardExcerpt {
+  font-family: v.$font-family-sans;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: v.$va-accent;
+  margin: 0;
+  flex: 1;
+}
+
+.cardReadMore {
+  font-family: v.$font-family-sans;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: v.$va-accent;
+  transition: color 0.2s;
+  margin-top: 0.5rem;
+}

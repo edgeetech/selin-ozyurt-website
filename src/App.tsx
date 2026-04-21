@@ -1,0 +1,41 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
+import NavBar from './components/NavBar'
+import Footer from './components/Footer'
+import HomePage from './pages/HomePage'
+import ProjectsPage from './pages/ProjectsPage'
+import ProjectDetailPage from './pages/ProjectDetailPage'
+import BlogPage from './pages/BlogPage'
+import BlogDetailPage from './pages/BlogDetailPage'
+import ContactPage from './pages/ContactPage'
+import AboutPage from './pages/AboutPage'
+import NotFoundPage from './pages/NotFoundPage'
+import styles from './App.module.scss'
+
+function App() {
+  return (
+    <HelmetProvider>
+      <BrowserRouter>
+        <div className={styles.layout}>
+          <header>
+            <NavBar />
+          </header>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/projects/:id" element={<ProjectDetailPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogDetailPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            {/* Catch-all: renders for any unmatched route */}
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </HelmetProvider>
+  )
+}
+
+export default App

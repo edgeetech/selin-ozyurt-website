@@ -1,0 +1,35 @@
+// ── Base palette ───────────────────────────────────────────────────────────────
+$color-bg:   #fafaf8;
+$color-text: #1a1a1a;
+
+// ── Typography ─────────────────────────────────────────────────────────────────
+$font-family-serif:     Georgia, 'Times New Roman', serif;
+$font-family-sans:      "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// ── Version A — Minimalist / monochrome ────────────────────────────────────────
+$va-bg:          #ffffff;
+$va-text:        #111111;
+$va-accent:      #555555;
+$va-divider:     #e0e0e0;
+$va-nav-bg:      #ffffff;
+$va-nav-text:    #111111;
+
+// ── Version B — Warm & earthy ──────────────────────────────────────────────────
+$vb-cream:       #f5f0e8;
+$vb-terracotta:  #c17a5a;
+$vb-warm-grey:   #8a7d74;
+$vb-text:        #3d2b20;
+$vb-panel-bg:    #ede5d8;
+$vb-nav-bg:      #f5f0e8;
+$vb-nav-text:    #3d2b20;
+
+// ── Shadows ────────────────────────────────────────────────────────────────────
+$shadow-card-hover: 0 4px 20px rgba(0, 0, 0, 0.12);
+
+// ── Version C — Bold / editorial ───────────────────────────────────────────────
+$vc-bg:          #0d0d0d;
+$vc-text:        #f0f0f0;
+$vc-accent:      #e8c547;
+$vc-muted:       #666666;
+$vc-nav-bg:      #0d0d0d;
+$vc-nav-text:    #f0f0f0;

@@ -1,0 +1,154 @@
+@use '../styles/variables' as v;
+
+.page {
+  min-height: 100vh;
+  padding: 8rem 4rem 4rem;
+  background-color: v.$color-bg;
+  color: v.$color-text;
+  font-family: v.$font-family-sans;
+
+  @media (max-width: 600px) {
+    padding: 6rem 1.25rem 3rem;
+  }
+}
+
+.back {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+}
+
+.backLink {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: v.$va-accent;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: v.$vb-terracotta;
+  }
+}
+
+// ── Article ───────────────────────────────────────────────────────────────────
+
+.article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.category {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: v.$vb-warm-grey;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-family: v.$font-family-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: v.$vb-text;
+  margin: 0 0 1rem;
+  line-height: 1.3;
+}
+
+.description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: v.$va-accent;
+  margin: 0;
+  font-style: italic;
+}
+
+// ── Image ─────────────────────────────────────────────────────────────────────
+
+.image {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 2.5rem;
+}
+
+// ── Body text ─────────────────────────────────────────────────────────────────
+
+.content {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: v.$color-text;
+
+  p {
+    margin: 0 0 1.25rem;
+  }
+
+  h2 {
+    font-family: v.$font-family-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: v.$vb-text;
+    margin: 2rem 0 0.75rem;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-family: v.$font-family-serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: v.$vb-text;
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.5rem;
+    margin: 0 0 1.25rem;
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  figure {
+    margin: 2rem 0;
+
+    img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+    }
+
+    figcaption {
+      font-size: 0.8rem;
+      color: v.$vb-warm-grey;
+      margin-top: 0.5rem;
+      font-style: italic;
+      line-height: 1.5;
+    }
+  }
+}
+
+// ── Not found ─────────────────────────────────────────────────────────────────
+
+.notFound {
+  font-size: 1rem;
+  color: v.$va-accent;
+  font-style: italic;
+  max-width: 720px;
+  margin: 0 auto;
+}

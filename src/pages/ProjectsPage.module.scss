@@ -1,0 +1,144 @@
+@use '../styles/variables' as v;
+
+.page {
+  min-height: 100vh;
+  background-color: v.$color-bg;
+  color: v.$color-text;
+  font-family: v.$font-family-sans;
+}
+
+// ── Hero ─────────────────────────────────────────────────────────────────────
+
+.hero {
+  padding: 8rem 4rem 3rem;
+  background-color: v.$vb-panel-bg;
+}
+
+.heroTitle {
+  font-family: v.$font-family-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin: 0;
+  color: v.$vb-text;
+}
+
+// ── Filter bar ───────────────────────────────────────────────────────────────
+
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 2rem 4rem;
+  background-color: v.$color-bg;
+  border-bottom: 1px solid v.$va-divider;
+}
+
+.filterBtn {
+  font-family: v.$font-family-sans;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid v.$va-divider;
+  background-color: transparent;
+  color: v.$va-accent;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+
+  &:hover {
+    background-color: v.$vb-panel-bg;
+    border-color: v.$vb-terracotta;
+    color: v.$vb-text;
+  }
+}
+
+.filterBtnActive {
+  background-color: v.$vb-terracotta;
+  border-color: v.$vb-terracotta;
+  color: v.$va-bg;
+
+  &:hover {
+    background-color: v.$vb-terracotta;
+    color: v.$va-bg;
+  }
+}
+
+// ── Grid ─────────────────────────────────────────────────────────────────────
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 3rem 4rem;
+
+  @media (max-width: 600px) {
+    padding: 2rem 1.25rem;
+    gap: 1rem;
+  }
+}
+
+// ── Card ─────────────────────────────────────────────────────────────────────
+
+.card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+  background-color: v.$vb-panel-bg;
+  aspect-ratio: 3 / 2;
+
+  &:hover .cardImage {
+    transform: scale(1.04);
+  }
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+// Always-visible gradient scrim — strong enough to read on any image
+// (bright or dark) in both light and dark mode.
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  // Two-stop scrim: fully opaque dark at the bottom, transparent at the top.
+  // Using the CSS colour-mix-safe raw values here is intentional — this is a
+  // fixed overlay scrim whose purpose is contrast, not theming.
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.35) 40%,
+    rgba(0, 0, 0, 0) 70%
+  );
+}
+
+.cardCategory {
+  font-family: v.$font-family-sans;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  // White with a subtle shadow — legible on both bright and dark images,
+  // and unchanged between light/dark mode since the scrim provides the
+  // contrast baseline.
+  color: v.$va-bg;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  margin-bottom: 0.25rem;
+}
+
+.cardTitle {
+  font-family: v.$font-family-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: v.$va-bg;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  margin: 0;
+}

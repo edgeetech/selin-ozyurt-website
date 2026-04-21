@@ -1,0 +1,199 @@
+// NavBar.module.scss
+// ── Modern, minimal, architect-portfolio navigation ──────────────────────────
+// Sketch hover effect: ::after underline draws in left→right via scaleX transform
+// with cubic-bezier easing for a pencil-stroke feel.
+@use '../styles/variables' as v;
+
+// ── Root nav container ────────────────────────────────────────────────────────
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: v.$va-nav-bg;
+  padding: 0 3rem;
+
+  // Subtle bottom rule — only the faintest divider to keep it airy
+  border-bottom: 1px solid v.$va-divider;
+}
+
+// ── Hamburger button — visible on mobile/tablet, hidden on desktop ────────────
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1.25rem 0;
+  margin-left: auto;
+
+  @media (max-width: 1023px) {
+    display: flex;
+  }
+}
+
+.hamburgerBar {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background-color: v.$va-nav-text;
+  border-radius: 0; // Crisp, no rounding — architectural feel
+  transition: background-color 0.2s ease;
+}
+
+// ── Nav list ──────────────────────────────────────────────────────────────────
+.list {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 1.5rem 0;
+
+  // On mobile/tablet: hide by default, show as vertical dropdown when open
+  @media (max-width: 1023px) {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0 0 1.5rem;
+
+    &.navOpen {
+      display: flex;
+    }
+  }
+}
+
+// ── Nav links — refined typography + sketch underline effect ──────────────────
+//
+// The ::after pseudo-element acts as a drawn underline:
+//   - Starts fully collapsed (scaleX 0) with transform-origin left
+//   - On hover / .active: expands to full width (scaleX 1)
+//   - cubic-bezier(0.4, 0, 0.2, 1) gives a smooth pencil-stroke feel
+.link {
+  position: relative;
+  font-family: v.$font-family-sans;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: v.$va-nav-text;
+  padding-bottom: 3px;
+
+  // Smooth colour shift on interaction
+  transition: color 0.2s ease;
+
+  // ── Sketch underline pseudo-element ────────────────────────────────────────
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  // Draw the underline in on hover
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  // Shift to accent colour on hover
+  &:hover {
+    color: v.$va-accent;
+  }
+
+  // ── Mobile — full-width list items with light separator ───────────────────
+  @media (max-width: 1023px) {
+    display: block;
+    padding: 0.875rem 0;
+    border-bottom: 1px solid v.$va-divider;
+
+    // Remove the pseudo-element sketch effect on mobile (border-bottom suffices)
+    &::after {
+      display: none;
+    }
+  }
+}
+
+// ── Active link — persistent drawn underline ──────────────────────────────────
+.active {
+  color: v.$va-accent;
+
+  // Underline is permanently drawn for the active route
+  &::after {
+    transform: scaleX(1);
+  }
+
+  // On mobile: use the border-bottom accent rather than the pseudo-element
+  @media (max-width: 1023px) {
+    border-bottom-color: v.$va-accent;
+  }
+}
+
+// ── Combined social icons + language switcher row ─────────────────────────────
+// On desktop: sits at the far right via margin-left: auto, children in a row.
+// On mobile: spans full width as a single flex row with padding.
+.mobileRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+
+  @media (max-width: 1023px) {
+    margin-left: 0;
+    width: 100%;
+    padding: 0.875rem 0;
+    gap: 1rem;
+    border-bottom: 1px solid v.$va-divider;
+    // Push language switcher to the far right; socials stay left
+    justify-content: space-between;
+  }
+}
+
+// ── Cluster of social icon links ──────────────────────────────────────────────
+.socialsGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  @media (max-width: 1023px) {
+    gap: 0.875rem;
+  }
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: v.$va-nav-text;
+  line-height: 1;
+  opacity: 0.7;
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  transition: color 0.2s ease, opacity 0.2s ease;
+
+  &:hover {
+    color: v.$va-accent;
+    opacity: 1;
+  }
+
+  @media (max-width: 1023px) {
+    opacity: 1;
+  }
+}
+
+.socialIcon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}

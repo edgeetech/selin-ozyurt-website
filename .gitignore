@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Environment variables
+.env
+.env.*
+
+# Local config files
+*.local
+
+# macOS
+.DS_Store
+
+# Test coverage
+coverage/
+
+# Vite cache
+.vite/

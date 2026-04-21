@@ -1,0 +1,103 @@
+@use '../styles/variables' as v;
+
+.page {
+  min-height: 100vh;
+  background-color: v.$color-bg;
+  color: v.$color-text;
+  font-family: v.$font-family-sans;
+}
+
+// ── Hero ─────────────────────────────────────────────────────────────────────
+
+.hero {
+  padding: 8rem 4rem 3rem;
+  background-color: v.$vb-panel-bg;
+}
+
+.heroTitle {
+  font-family: v.$font-family-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.5rem;
+  color: v.$vb-text;
+}
+
+.heroSubtitle {
+  font-family: v.$font-family-sans;
+  font-size: 1rem;
+  color: v.$vb-warm-grey;
+  margin: 0;
+}
+
+// ── Search bar ───────────────────────────────────────────────────────────────
+
+.searchBar {
+  padding: 2rem 4rem;
+  background-color: v.$color-bg;
+  border-bottom: 1px solid v.$va-divider;
+
+  @media (max-width: 600px) {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.searchInput {
+  width: 100%;
+  max-width: 480px;
+  font-family: v.$font-family-sans;
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid v.$va-divider;
+  background-color: v.$va-bg;
+  color: v.$color-text;
+  outline: none;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: v.$vb-terracotta;
+  }
+
+  &::placeholder {
+    color: v.$vb-warm-grey;
+  }
+}
+
+// ── Grid ─────────────────────────────────────────────────────────────────────
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  padding: 3rem 4rem;
+
+  @media (max-width: 600px) {
+    padding: 2rem 1.25rem;
+    gap: 1rem;
+  }
+}
+
+// ── No results ───────────────────────────────────────────────────────────────
+
+.noResults {
+  padding: 4rem;
+  font-size: 1rem;
+  color: v.$va-accent;
+  font-style: italic;
+
+  @media (max-width: 600px) {
+    padding: 2rem 1.25rem;
+  }
+}

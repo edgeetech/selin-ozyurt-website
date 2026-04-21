@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      const { pathname, search, hash } = window.location
+      const redirect = `/?p=${encodeURIComponent(pathname)}&q=${encodeURIComponent(search.slice(1))}&h=${encodeURIComponent(hash)}`
+
+      window.location.replace(redirect)
+    </script>
+  </head>
+  <body></body>
+</html>

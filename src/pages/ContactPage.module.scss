@@ -1,0 +1,224 @@
+@use '../styles/variables' as v;
+
+.page {
+  min-height: 100vh;
+  background-color: v.$color-bg;
+  color: v.$color-text;
+  font-family: v.$font-family-sans;
+}
+
+// ── Header ───────────────────────────────────────────────────────────────────
+
+.header {
+  padding: 7rem 4rem 3rem;
+  border-bottom: 1px solid v.$va-divider;
+}
+
+.title {
+  font-family: v.$font-family-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.5rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: v.$va-accent;
+  margin: 0;
+}
+
+// ── Body layout ──────────────────────────────────────────────────────────────
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+}
+
+// ── Info column ───────────────────────────────────────────────────────────────
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.infoHeading {
+  font-family: v.$font-family-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 0.02em;
+  color: v.$color-text;
+  border-bottom: 1px solid v.$va-divider;
+  padding-bottom: 0.75rem;
+}
+
+.detailList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.detailLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: v.$va-accent;
+  font-weight: 500;
+}
+
+.detailValue {
+  font-size: 1rem;
+  color: v.$color-text;
+  margin: 0;
+}
+
+// ── Map ───────────────────────────────────────────────────────────────────────
+
+.mapWrapper {
+  border: 1px solid v.$va-divider;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.map {
+  display: block;
+  border: none;
+  width: 100%;
+}
+
+// ── Secondary location ────────────────────────────────────────────────────────
+
+.secondaryLocation {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid v.$va-divider;
+}
+
+.secondaryLocationHeading {
+  font-family: v.$font-family-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 0.02em;
+  color: v.$color-text;
+}
+
+// ── Form column ───────────────────────────────────────────────────────────────
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formHeading {
+  font-family: v.$font-family-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 0.02em;
+  color: v.$color-text;
+  border-bottom: 1px solid v.$va-divider;
+  padding-bottom: 0.75rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: v.$va-accent;
+  font-weight: 500;
+}
+
+.input,
+.textarea {
+  font-family: v.$font-family-sans;
+  font-size: 1rem;
+  color: v.$color-text;
+  background-color: v.$color-bg;
+  border: 1px solid v.$va-divider;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+  resize: none;
+
+  &:focus {
+    border-color: v.$va-accent;
+  }
+}
+
+.inputError {
+  border-color: v.$vb-terracotta;
+}
+
+.errorText {
+  font-size: 0.8rem;
+  color: v.$vb-terracotta;
+  letter-spacing: 0.02em;
+}
+
+.submitButton {
+  align-self: flex-start;
+  font-family: v.$font-family-sans;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: v.$color-bg;
+  background-color: v.$color-text;
+  border: none;
+  padding: 0.9rem 2.5rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+// ── Success message ───────────────────────────────────────────────────────────
+
+.successMessage {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: v.$vb-text;
+  background-color: v.$vb-panel-bg;
+  padding: 1.5rem;
+  border-left: 3px solid v.$vb-terracotta;
+}

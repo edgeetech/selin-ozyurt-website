@@ -1,0 +1,154 @@
+{
+  "heading": "Selin Özyurt — Architect",
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact",
+    "about": "About",
+    "menuOpen": "Open navigation menu",
+    "menuClose": "Close navigation menu"
+  },
+  "landing": {
+    "tagline": "Crafting spaces that speak.",
+    "cta": "View Projects",
+    "subtitle": "Architect · Adana"
+  },
+  "HomePage": {
+    "tagline": "Architecture in its purest form.",
+    "cta": "Explore Work",
+    "subtitle": "Architect · Adana",
+    "recentPosts": "Recent Writing",
+    "allPosts": "All Posts"
+  },
+  "projects": {
+    "title": "Projects",
+    "filterAriaLabel": "Filter projects by category",
+    "gridAriaLabel": "Project portfolio grid",
+    "filter": {
+      "all": "All",
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "interior": "Interior",
+      "landscape": "Landscape"
+    },
+    "categories": {
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "interior": "Interior",
+      "landscape": "Landscape"
+    },
+    "detail": {
+      "back": "← Back to Projects",
+      "comingSoon": "Project details coming soon."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get in touch",
+    "infoHeading": "Contact Information",
+    "infoAriaLabel": "Contact information",
+    "formHeading": "Send a Message",
+    "formAriaLabel": "Contact form",
+    "phoneLabel": "Phone",
+    "phoneAriaLabel": "Phone number",
+    "emailLabel": "Email",
+    "emailAriaLabel": "Email address",
+    "addressLabel": "Address",
+    "addressValue": "Adana, Turkey",
+    "mapTitle": "Office Location — Adana, Turkey",
+    "address2Label": "Secondary Office",
+    "address2Value": "Cambridge, UK",
+    "map2Title": "Office Location — Cambridge, UK",
+    "successMessage": "Thank you for your message. I will get back to you as soon as possible.",
+    "form": {
+      "namePlaceholder": "Name",
+      "emailPlaceholder": "Email",
+      "messagePlaceholder": "Message",
+      "submit": "Send Message"
+    },
+    "errors": {
+      "nameRequired": "Please enter your name.",
+      "emailRequired": "Please enter your email.",
+      "emailInvalid": "Please enter a valid email address.",
+      "messageRequired": "Please enter a message."
+    }
+  },
+  "aboutHeroTitle": "About Me",
+  "aboutHeroSubtitle": "Architect · Adana",
+  "aboutBioHeading": "My Story",
+  "aboutBioParagraph1": "I am Selin Özyurt, an architect based in Adana with a passion for creating spaces that blend functionality with beauty. My work is driven by a deep respect for the relationship between people and their built environment.",
+  "aboutBioParagraph2": "With years of experience across residential, cultural, and urban projects, I bring a thoughtful, detail-oriented approach to every commission — from concept to construction.",
+  "aboutPhilosophyHeading": "Design Philosophy",
+  "aboutPhilosophyText": "Architecture is not just about buildings; it is about the experiences they create. I believe every project is an opportunity to improve daily life through honest materials, considered proportions, and spaces that endure.",
+  "language": {
+    "label": "Select language",
+    "en": "English",
+    "tr": "Turkish",
+    "es": "Spanish"
+  },
+  "socials": {
+    "navAriaLabel": "Social media links",
+    "ariaInstagram": "Follow on Instagram",
+    "ariaLinkedIn": "Connect on LinkedIn",
+    "ariaEmail": "Send an email"
+  },
+  "footer": {
+    "copyright": "© {{year}} Selin Özyurt."
+  },
+  "blog": {
+    "title": "Blog",
+    "heroTitle": "Journal",
+    "heroSubtitle": "Thoughts on architecture, materiality, and design",
+    "searchPlaceholder": "Search posts…",
+    "searchAriaLabel": "Search blog posts",
+    "gridAriaLabel": "Blog post list",
+    "noResults": "No posts match your search.",
+    "readMore": "Read more",
+    "back": "← Back to Blog",
+    "publishedOn": "Published on {{date}}",
+    "cardAriaLabel": "Read post: {{title}}"
+  },
+  "notFound": {
+    "codeAriaLabel": "Error code 404",
+    "title": "Page Not Found",
+    "message": "The page you are looking for does not exist or has been moved.",
+    "homeLink": "← Back to Homepage"
+  },
+  "seo": {
+    "siteName": "Selin Özyurt — Architect",
+    "ogImage": "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=80",
+    "home": {
+      "title": "Selin Özyurt — Architect · Adana",
+      "description": "Selin Özyurt is an Adana-based architect crafting spaces that blend functionality with beauty — residential, commercial, and landscape projects."
+    },
+    "projects": {
+      "title": "Projects — Selin Özyurt Architect",
+      "description": "Explore Selin Özyurt's portfolio of residential, commercial, interior, and landscape architecture projects in Adana and beyond."
+    },
+    "projectDetail": {
+      "title": "{{title}} — Selin Özyurt Architect",
+      "description": "{{description}}"
+    },
+    "blog": {
+      "title": "Journal — Selin Özyurt Architect",
+      "description": "Thoughts on architecture, materiality, and design by Selin Özyurt, Adana-based architect."
+    },
+    "blogDetail": {
+      "title": "{{title}} — Selin Özyurt Journal",
+      "description": "{{excerpt}}"
+    },
+    "contact": {
+      "title": "Contact — Selin Özyurt Architect",
+      "description": "Get in touch with Selin Özyurt, architect based in Adana, Turkey. Available for residential, commercial and landscape commissions."
+    },
+    "about": {
+      "title": "About — Selin Özyurt Architect",
+      "description": "Learn about Selin Özyurt, an Adana-based architect with a passion for creating spaces that blend functionality with beauty."
+    },
+    "notFound": {
+      "title": "Page Not Found — Selin Özyurt Architect",
+      "description": "The page you are looking for does not exist or has been moved."
+    }
+  }
+}

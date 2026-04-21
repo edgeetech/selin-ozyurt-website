@@ -1,0 +1,74 @@
+@use '../styles/variables' as v;
+@use '../styles/mixins' as m;
+
+.footer {
+  margin-top: auto;
+  border-top: 1px solid v.$va-divider;
+  background-color: v.$va-bg;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 639px) {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    align-items: center;
+  }
+}
+
+.socials {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  @media (max-width: 639px) {
+    @include m.flex-center;
+    width: 100%;
+  }
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: v.$va-text;
+  font-family: v.$font-family-sans;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: v.$va-accent;
+  }
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.platformName {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.copyright {
+  font-family: v.$font-family-sans;
+  font-size: 0.75rem;
+  color: v.$va-accent;
+  letter-spacing: 0.06em;
+  margin: 0;
+
+  @media (max-width: 639px) {
+    text-align: center;
+    width: 100%;
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "heading": "Selin Özyurt — Mimar",
+  "nav": {
+    "home": "Anasayfa",
+    "projects": "Projeler",
+    "blog": "Blog",
+    "contact": "İletişim",
+    "about": "Hakkımda",
+    "menuOpen": "Gezinti menüsünü aç",
+    "menuClose": "Gezinti menüsünü kapat"
+  },
+  "landing": {
+    "tagline": "Konuşan mekanlar tasarlıyor.",
+    "cta": "Projeleri Gör",
+    "subtitle": "Mimar · Adana"
+  },
+  "HomePage": {
+    "tagline": "Mimarlık en saf haliyle.",
+    "cta": "Çalışmaları Keşfet",
+    "subtitle": "Mimar · Adana",
+    "recentPosts": "Son Yazılar",
+    "allPosts": "Tüm Yazılar"
+  },
+  "projects": {
+    "title": "Projeler",
+    "filterAriaLabel": "Projeleri kategoriye göre filtrele",
+    "gridAriaLabel": "Proje portföy ızgarası",
+    "filter": {
+      "all": "Tümü",
+      "residential": "Konut",
+      "commercial": "Ticari",
+      "interior": "İç Mekan",
+      "landscape": "Peyzaj"
+    },
+    "categories": {
+      "residential": "Konut",
+      "commercial": "Ticari",
+      "interior": "İç Mekan",
+      "landscape": "Peyzaj"
+    },
+    "detail": {
+      "back": "← Projelere Dön",
+      "comingSoon": "Proje detayları yakında."
+    }
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "Bize ulaşın",
+    "infoHeading": "İletişim Bilgileri",
+    "infoAriaLabel": "İletişim bilgileri",
+    "formHeading": "Mesaj Gönderin",
+    "formAriaLabel": "İletişim formu",
+    "phoneLabel": "Telefon",
+    "phoneAriaLabel": "Telefon numarası",
+    "emailLabel": "E-posta",
+    "emailAriaLabel": "E-posta adresi",
+    "addressLabel": "Adres",
+    "addressValue": "Adana, Türkiye",
+    "mapTitle": "Ofis Konumu — Adana, Türkiye",
+    "address2Label": "İkinci Ofis",
+    "address2Value": "Cambridge, Birleşik Krallık",
+    "map2Title": "Ofis Konumu — Cambridge, Birleşik Krallık",
+    "successMessage": "Mesajınız için teşekkürler. En kısa sürede size geri döneceğim.",
+    "form": {
+      "namePlaceholder": "İsim",
+      "emailPlaceholder": "E-posta",
+      "messagePlaceholder": "Mesaj",
+      "submit": "Mesaj Gönder"
+    },
+    "errors": {
+      "nameRequired": "Lütfen adınızı girin.",
+      "emailRequired": "Lütfen e-posta adresinizi girin.",
+      "emailInvalid": "Lütfen geçerli bir e-posta adresi girin.",
+      "messageRequired": "Lütfen bir mesaj girin."
+    }
+  },
+  "aboutHeroTitle": "Hakkımda",
+  "aboutHeroSubtitle": "Mimar · Adana",
+  "aboutBioHeading": "Hikayem",
+  "aboutBioParagraph1": "Ben Selin Özyurt, Adana merkezli bir mimarım. İşlevselliği güzellikle harmanlayan mekanlar yaratma tutkusuyla çalışıyorum. İşlerim, insanlar ile yapılı çevre arasındaki ilişkiye duyduğum derin saygıdan besleniyor.",
+  "aboutBioParagraph2": "Konut, kültürel ve kentsel projelerde yıllar içinde edindiğim deneyimle, kavramdan inşaata her aşamada düşünceli ve detay odaklı bir yaklaşım getiriyorum.",
+  "aboutPhilosophyHeading": "Tasarım Felsefem",
+  "aboutPhilosophyText": "Mimarlık yalnızca binalar hakkında değildir; yarattığı deneyimler hakkındadır. Her projenin, dürüst malzemeler, ölçülü oranlar ve zamanla önem kazanan mekanlar aracılığıyla günlük yaşamı iyileştirme fırsatı olduğuna inanıyorum.",
+  "language": {
+    "label": "Dil seçin",
+    "en": "İngilizce",
+    "tr": "Türkçe",
+    "es": "İspanyolca"
+  },
+  "socials": {
+    "navAriaLabel": "Sosyal medya bağlantıları",
+    "ariaInstagram": "Instagram'da takip edin",
+    "ariaLinkedIn": "LinkedIn'de bağlanın",
+    "ariaEmail": "E-posta gönderin"
+  },
+  "footer": {
+    "copyright": "© {{year}} Selin Özyurt."
+  },
+  "blog": {
+    "title": "Blog",
+    "heroTitle": "Günlük",
+    "heroSubtitle": "Mimarlık, malzeme ve tasarım üzerine düşünceler",
+    "searchPlaceholder": "Yazıları ara…",
+    "searchAriaLabel": "Blog yazılarını ara",
+    "gridAriaLabel": "Blog yazı listesi",
+    "noResults": "Aramanızla eşleşen yazı bulunamadı.",
+    "readMore": "Devamını oku",
+    "back": "← Blog'a Dön",
+    "publishedOn": "{{date}} tarihinde yayınlandı",
+    "cardAriaLabel": "Yazıyı oku: {{title}}"
+  },
+  "notFound": {
+    "codeAriaLabel": "Hata kodu 404",
+    "title": "Sayfa Bulunamadı",
+    "message": "Aradığınız sayfa mevcut değil veya taşınmış olabilir.",
+    "homeLink": "← Anasayfaya Dön"
+  },
+  "seo": {
+    "siteName": "Selin Özyurt — Mimar",
+    "ogImage": "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=80",
+    "home": {
+      "title": "Selin Özyurt — Mimar · Adana",
+      "description": "Selin Özyurt, Adana merkezli bir mimar olarak konut, ticari ve peyzaj projelerinde işlevselliği güzellikle harmanlayan mekanlar tasarlıyor."
+    },
+    "projects": {
+      "title": "Projeler — Selin Özyurt Mimar",
+      "description": "Selin Özyurt'un Adana ve çevresindeki konut, ticari, iç mekan ve peyzaj mimarlığı projelerini keşfedin."
+    },
+    "projectDetail": {
+      "title": "{{title}} — Selin Özyurt Mimar",
+      "description": "{{description}}"
+    },
+    "blog": {
+      "title": "Günlük — Selin Özyurt Mimar",
+      "description": "Adana merkezli mimar Selin Özyurt'tan mimarlık, malzeme ve tasarım üzerine düşünceler."
+    },
+    "blogDetail": {
+      "title": "{{title}} — Selin Özyurt Günlük",
+      "description": "{{excerpt}}"
+    },
+    "contact": {
+      "title": "İletişim — Selin Özyurt Mimar",
+      "description": "Adana, Türkiye merkezli mimar Selin Özyurt ile iletişime geçin. Konut, ticari ve peyzaj projeleri için müsait."
+    },
+    "about": {
+      "title": "Hakkımda — Selin Özyurt Mimar",
+      "description": "Adana merkezli mimar Selin Özyurt hakkında bilgi edinin; işlevselliği güzellikle harmanlayan mekanlar yaratma tutkusuyla çalışıyor."
+    },
+    "notFound": {
+      "title": "Sayfa Bulunamadı — Selin Özyurt Mimar",
+      "description": "Aradığınız sayfa mevcut değil veya taşınmış olabilir."
+    }
+  }
+}
