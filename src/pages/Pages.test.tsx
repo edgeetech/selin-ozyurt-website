@@ -256,15 +256,16 @@ describe('ContactPage', () => {
     expect(screen.queryByText('Lütfen adınızı girin.')).not.toBeInTheDocument()
   })
 
-  it('renders the OpenStreetMap iframe', () => {
+  it('renders the OpenStreetMap raster map (Leaflet, no iframe/WebGL)', () => {
     render(
       <MemoryRouter>
         <ContactPage />
       </MemoryRouter>
     )
-    const iframe = document.querySelector('iframe')
-    expect(iframe).toBeInTheDocument()
-    expect(iframe?.src).toContain('openstreetmap.org')
+    expect(document.querySelector('iframe')).not.toBeInTheDocument()
+    const tile = document.querySelector('[data-testid="tile-layer"]')
+    expect(tile).toBeInTheDocument()
+    expect(tile?.getAttribute('data-url')).toContain('tile.openstreetmap.org')
   })
 
   it('renders Name, Email, Message fields and Submit button', () => {

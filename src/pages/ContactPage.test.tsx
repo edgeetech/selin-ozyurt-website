@@ -322,65 +322,68 @@ describe('ContactPage', () => {
     expect(screen.getByRole('heading', { level: 3, name: 'İkinci Ofis' })).toBeInTheDocument()
   })
 
-  it('renders Cambridge OpenStreetMap iframe with title from i18n key (contact.map2Title)', () => {
+  it('renders Cambridge map region with aria-label from i18n key (contact.map2Title)', () => {
     render(
       <MemoryRouter>
         <ContactPage />
       </MemoryRouter>
     )
-    const iframes = document.querySelectorAll('iframe')
-    expect(iframes.length).toBe(2)
     // Turkish value: "Ofis Konumu — Cambridge, Birleşik Krallık"
-    expect(iframes[1].title).toBe('Ofis Konumu — Cambridge, Birleşik Krallık')
+    expect(
+      screen.getByRole('region', { name: 'Ofis Konumu — Cambridge, Birleşik Krallık' })
+    ).toBeInTheDocument()
   })
 
-  it('Cambridge iframe bbox is centred on Cambridge, UK', () => {
+  it('Cambridge map is centred on Cambridge, UK (52.2053, 0.1218)', () => {
     render(
       <MemoryRouter>
         <ContactPage />
       </MemoryRouter>
     )
-    const iframes = document.querySelectorAll('iframe')
-    expect(iframes[1].src).toContain('openstreetmap.org')
-    expect(iframes[1].src).toContain('52.1453')
-    expect(iframes[1].src).toContain('52.2653')
+    const maps = document.querySelectorAll('[data-testid="map-container"]')
+    expect(maps.length).toBe(2)
+    expect(maps[1].getAttribute('data-center')).toBe('52.2053,0.1218')
+    const markers = document.querySelectorAll('[data-testid="map-marker"]')
+    expect(markers[1].getAttribute('data-position')).toBe('52.2053,0.1218')
   })
 
-  // ── OpenStreetMap iframe ──────────────────────────────────────────────────
+  // ── OpenStreetMap raster map (Leaflet, no WebGL) ─────────────────────────
 
-  it('renders OpenStreetMap iframe', () => {
+  it('renders OpenStreetMap raster tile layer (no iframe, no WebGL)', () => {
     render(
       <MemoryRouter>
         <ContactPage />
       </MemoryRouter>
     )
-    const iframe = document.querySelector('iframe')
-    expect(iframe).toBeInTheDocument()
-    expect(iframe?.src).toContain('openstreetmap.org')
+    expect(document.querySelector('iframe')).not.toBeInTheDocument()
+    const tiles = document.querySelectorAll('[data-testid="tile-layer"]')
+    expect(tiles.length).toBe(2)
+    expect(tiles[0].getAttribute('data-url')).toContain('tile.openstreetmap.org')
   })
 
-  it('iframe bbox is centred on Adana', () => {
+  it('Adana map is centred on Adana (37.0, 35.3213)', () => {
     render(
       <MemoryRouter>
         <ContactPage />
       </MemoryRouter>
     )
-    const iframe = document.querySelector('iframe')
-    expect(iframe?.src).toContain('bbox=35.2213')
-    expect(iframe?.src).toContain('36.9')
-    expect(iframe?.src).toContain('35.4213')
-    expect(iframe?.src).toContain('37.1')
+    const maps = document.querySelectorAll('[data-testid="map-container"]')
+    expect(maps[0].getAttribute('data-center')).toBe('37,35.3213')
+    expect(maps[0].getAttribute('data-zoom')).toBe('12')
+    const markers = document.querySelectorAll('[data-testid="map-marker"]')
+    expect(markers[0].getAttribute('data-position')).toBe('37,35.3213')
   })
 
-  it('iframe has title from i18n key (contact.mapTitle)', () => {
+  it('Adana map has aria-label from i18n key (contact.mapTitle)', () => {
     render(
       <MemoryRouter>
         <ContactPage />
       </MemoryRouter>
     )
-    const iframe = document.querySelector('iframe')
     // Turkish value: "Ofis Konumu — Adana, Türkiye"
-    expect(iframe?.title).toBe('Ofis Konumu — Adana, Türkiye')
+    expect(
+      screen.getByRole('region', { name: 'Ofis Konumu — Adana, Türkiye' })
+    ).toBeInTheDocument()
   })
 
   // ── Accessibility ─────────────────────────────────────────────────────────

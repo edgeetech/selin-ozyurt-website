@@ -1,8 +1,15 @@
 import { useTranslation } from 'react-i18next'
 import { useEffect, useRef, useState } from 'react'
 import type { ChangeEvent, FormEvent } from 'react'
+import { MapContainer, Marker, TileLayer } from 'react-leaflet'
 import PageSeo from '../components/PageSeo'
 import styles from './ContactPage.module.scss'
+
+const ADANA: [number, number] = [37.0, 35.3213]
+const CAMBRIDGE: [number, number] = [52.2053, 0.1218]
+const OSM_TILE_URL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+const OSM_ATTRIBUTION =
+  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 
 // Phone and email are stored reversed to prevent scraping.
 // They are decoded and injected via ref.textContent on mount — never rendered as plain HTML text.
@@ -110,15 +117,23 @@ function ContactPage() {
             </div>
           </dl>
 
-          {/* OpenStreetMap — centred on Adana, Turkey (37.0, 35.3213) */}
-          <div className={styles.mapWrapper}>
-            <iframe
-              src="https://www.openstreetmap.org/export/embed.html?bbox=35.2213%2C36.9%2C35.4213%2C37.1&layer=mapnik"
-              width="100%"
-              height="400"
-              title={t('contact.mapTitle')}
+          {/* OpenStreetMap raster tiles (no WebGL) — centred on Adana, Turkey (37.0, 35.3213) */}
+          <div
+            className={styles.mapWrapper}
+            role="region"
+            aria-label={t('contact.mapTitle')}
+          >
+            <MapContainer
+              center={ADANA}
+              zoom={12}
+              scrollWheelZoom={false}
               className={styles.map}
-            />
+              style={{ width: '100%', height: 400 }}
+              aria-label={t('contact.mapTitle')}
+            >
+              <TileLayer url={OSM_TILE_URL} attribution={OSM_ATTRIBUTION} />
+              <Marker position={ADANA} />
+            </MapContainer>
           </div>
 
           {/* Secondary location — Cambridge, UK */}
@@ -130,15 +145,23 @@ function ContactPage() {
                 <dd className={styles.detailValue}>{t('contact.address2Value')}</dd>
               </div>
             </dl>
-            {/* OpenStreetMap — centred on Cambridge, UK (52.2053, 0.1218) */}
-            <div className={styles.mapWrapper}>
-              <iframe
-                src="https://www.openstreetmap.org/export/embed.html?bbox=-0.0782%2C52.1453%2C0.3218%2C52.2653&layer=mapnik"
-                width="100%"
-                height="300"
-                title={t('contact.map2Title')}
+            {/* OpenStreetMap raster tiles (no WebGL) — centred on Cambridge, UK (52.2053, 0.1218) */}
+            <div
+              className={styles.mapWrapper}
+              role="region"
+              aria-label={t('contact.map2Title')}
+            >
+              <MapContainer
+                center={CAMBRIDGE}
+                zoom={12}
+                scrollWheelZoom={false}
                 className={styles.map}
-              />
+                style={{ width: '100%', height: 300 }}
+                aria-label={t('contact.map2Title')}
+              >
+                <TileLayer url={OSM_TILE_URL} attribution={OSM_ATTRIBUTION} />
+                <Marker position={CAMBRIDGE} />
+              </MapContainer>
             </div>
           </div>
         </section>
